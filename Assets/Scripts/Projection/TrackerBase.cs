@@ -9,7 +9,7 @@ namespace Apt.Unity.Projection
         [HideInInspector]
         public bool IsTracking { get; protected set; }
         [HideInInspector]
-        public ulong TrackedId { get; protected set; }
+        public long TrackedId { get; protected set; }
         [HideInInspector]
         public Vector3 Translation { get => translation; }
         [HideInInspector]
