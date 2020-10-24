@@ -60,3 +60,10 @@ crashlytics-build.properties
 
 Assets/K2Examples/
 NuiDatabase/
+/*.dll
+OpenNI.ini
+OrbbecBodyTracking.data
+OpenNI2/Drivers/orbbec.dll
+OpenNI2/Drivers/orbbec.ini
+vgbtechs/AdaBoostTech.dll
+vgbtechs/RFRProgressTech.dll
