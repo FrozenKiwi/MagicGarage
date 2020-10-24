@@ -58,7 +58,6 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
-Assets/K2Examples/
 NuiDatabase/
 /*.dll
 OpenNI.ini
