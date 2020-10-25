@@ -17,10 +17,12 @@ public class KinectHeadTracker : TrackerBase, SpeechRecognitionInterface
     public Vector3 CallibrateRight = -Vector3.left;
 
     private Matrix4x4 _offset = Matrix4x4.identity;
-    // Start is called before the first frame update
-    void Start()
+
+    void Awake()
     {
+        Priority = 10;
         Kinect = KinectManager.Instance;
+        IsConnected = Kinect.GetSensorPlatform() == KinectInterop.DepthSensorPlatform.KinectSDKv2;
     }
 
     // Each update, see if we have a head position we can track

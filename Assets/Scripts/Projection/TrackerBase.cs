@@ -7,6 +7,10 @@ namespace Apt.Unity.Projection
     public class TrackerBase : MonoBehaviour
     {
         [HideInInspector]
+        public int Priority { get; protected set; } // Highest priority runs
+        [HideInInspector]
+        public bool IsConnected { get; protected set; }
+        [HideInInspector]
         public bool IsTracking { get; protected set; }
         [HideInInspector]
         public long TrackedId { get; protected set; }

@@ -18,9 +18,11 @@ namespace Apt.Unity.Projection
 
         private float HalfBoundSize => BoundsSize * 0.5f;
 
-        void Start()
+        private void Awake()
         {
             IsTracking = true;
+            Priority = 1;
+            IsConnected = true;
         }
 
         void Update()
