@@ -14,9 +14,13 @@ public class GarageManager : MonoBehaviour
     private ProjectionPlaneCamera projectionCamera;
     private Vector3 initialLocalPosition;
 
+    private int _lastScene = 0;
+
 
     private float _sceneRunTime = 0;
     private bool _sceneRunning = false;
+    private Coroutine _deactivation;
+
     public bool SceneRunning
     {
         get => _sceneRunning;
@@ -58,13 +62,27 @@ public class GarageManager : MonoBehaviour
     private void SceneShow()
     {
         GarageDoor.TriggerOpen();
+
+        Scenes[_lastScene].SetActive(false);
+        _lastScene = (_lastScene + 1) % Scenes.Length;
+        Scenes[_lastScene].SetActive(true);
     }
 
     private void SceneHide()
     {
         GarageDoor.TriggerClose();
 
+        if (_deactivation != null)
+            StopCoroutine(_deactivation);
+        _deactivation = StartCoroutine(TemporarilyDeactivate(2.1f, Scenes[_lastScene]));
+        
     }
+    private IEnumerator TemporarilyDeactivate(float duration, GameObject go)
+    {
+        yield return new WaitForSeconds(duration);
+        go.SetActive(false);
+    }
+
 
     TrackerBase GetFirstConnectedTracker()
     {

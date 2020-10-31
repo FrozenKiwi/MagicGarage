@@ -68,3 +68,5 @@ vgbtechs/AdaBoostTech.dll
 vgbtechs/RFRProgressTech.dll
 SpeechGrammar.grxml
 *.FBX
+Assets/FireAndIceDragons/
+Assets/FireAndIceDragons.meta
