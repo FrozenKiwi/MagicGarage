@@ -2719,7 +2719,7 @@ public class KinectManager : MonoBehaviour
 	// updates Kinect streams and structures
 	private void UpdateKinectStreams()
 	{
-		if(kinectInitialized)
+		if(kinectInitialized && sensorData != null)
 		{
 			KinectInterop.UpdateSensorData(sensorData);
 
@@ -2821,6 +2821,9 @@ public class KinectManager : MonoBehaviour
 	// process data from Kinect streams
 	private void ProcessKinectStreams()
 	{
+		if (sensorData == null)
+			return;
+
 		// render color texture
 		if(sensorData.colorImageBufferReady)
 		{

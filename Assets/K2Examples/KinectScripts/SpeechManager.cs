@@ -415,7 +415,7 @@ public class SpeechManager : MonoBehaviour
 //			}
 //		}
 		
-		if(sapiInitialized)
+		if(sapiInitialized && sensorData != null)
 		{
 			// update the speech recognizer
 			int rc = sensorData.sensorInterface.UpdateSpeechRecognition();

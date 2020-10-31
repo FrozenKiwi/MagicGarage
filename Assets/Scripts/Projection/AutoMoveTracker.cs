@@ -20,14 +20,14 @@ namespace Apt.Unity.Projection
 
         private void Awake()
         {
-            IsTracking = true;
+            IsTracking = false;
             Priority = 1;
             IsConnected = true;
         }
 
         void Update()
         {
-            if(Input.GetKeyUp(KeyCode.A) && (Input.GetKey(KeyCode.LeftControl) || Input.GetKey(KeyCode.RightControl)))
+            if(Input.GetKeyUp(KeyCode.Space))
             {
                 IsTracking = !IsTracking;
                 SecondsHasBeenTracked = 0;
